@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Summer Programming School Registration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f6fa;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2b4a6f;
+    }
+
+    form {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 700px;
+      margin: auto;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    fieldset {
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 5px;
+    }
+
+    legend {
+      font-weight: bold;
+      color: #2b4a6f;
+    }
+
+    label {
+      font-weight: 500;
+      color: #333;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    input[type="file"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #aaa;
+      border-radius: 4px;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      margin-right: 5px;
+    }
+
+    input[type="submit"] {
+      background-color: #2b4a6f;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      display: block;
+      margin: auto;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #1d334d;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Summer Programming School Registration</h1>
+  
+  <form id="registrationForm" action="" method="POST">
+    <fieldset>
+      <legend>Personal Information</legend>
+      <label for="fullname">Please Enter Full Name:</label>
+      <input type="text" id="fullname" name="fullname" placeholder="John Doe" required>
+
+      <label for="email">Please Enter Email Address:</label>
+      <input type="email" id="email" name="email" placeholder="johndoe@gmail.com" required>
+
+      <label for="age">Please Enter Your Age:</label>
+      <input type="number" id="age" name="age" min="10" max="300" placeholder="20" required>
+
+      <label for="phone">Please Enter Phone Number:</label>
+      <input type="number" id="phone" name="phone" placeholder="+2347000000000">
+    </fieldset>
+
+    <fieldset>
+      <legend>Course Selection</legend>
+
+      <label for="course">Choose a Course:</label>
+      <select id="course" name="course" required>
+        <option value="">--Select a Course--</option>
+        <option value="python">Python for Beginners</option>
+        <option value="machinelearning">Machine Learning</option>
+        <option value="webdev">Web Development (HTML/CSS/JS)</option>
+        <option value="scratch">Game Development with Scratch</option>
+        <option value="robotics">Intro. to Robotics</option>
+      </select>
+
+      <label>What is your preferred Schedule?</label><br>
+      <input type="radio" id="morning" name="schedule" value="morning">
+      <label for="morning">Morning (9 AM - 12 PM)</label><br>
+
+      <input type="radio" id="afternoon" name="schedule" value="afternoon">
+      <label for="afternoon">Afternoon (1 PM - 4 PM)</label><br><br>
+    </fieldset>
+
+    <fieldset>
+      <legend>Additional Information</legend>
+      <label for="motivation">Personal Motivation:</label><br>
+      <textarea id="motivation" name="motivation" rows="4" cols="50" placeholder="My motivation is..."></textarea><br><br>
+
+      <label for="passport">Please upload a recent passport:</label>
+      <input type="file" id="passport" name="passport">
+    </fieldset>
+
+    <fieldset>
+      <legend>Accept Terms & Conditions:</legend>
+      <input type="checkbox" id="consent" name="consent" required>
+      <label for="consent">I agree to the terms and conditions.</label><br><br>
+    </fieldset>
+
+    <hr />
+    <hr />
+    <input type="submit" id="submit" value="Register">
+  </form>
+
+  <script>
+    document.getElementById("registrationForm").addEventListener("submit", function (event) {
+      event.preventDefault(); // Prevent real form submission
+
+      const name = document.getElementById("fullname").value;
+      const course = document.getElementById("course").value;
+
+      alert("Thank you, " + name + "! You have successfully registered for the course: " + course.toUpperCase());
+    });
+  </script>
+
+</body>
+</html>
